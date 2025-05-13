@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RopIA - Tu asistente de moda con IA</title>
+    <title>RopIA - Probador Virtual de Ropa con IA</title>
     <style>
         :root {
-            --primary: #1E88E5;  /* Azul principal */
-            --primary-dark: #1565C0;  /* Azul oscuro */
-            --primary-light: #42A5F5;  /* Azul claro */
-            --secondary: #00ACC1;  /* Azul turquesa */
-            --accent: #536DFE;  /* Azul acento */
-            --dark: #263238;  /* Gris oscuro */
-            --light: #ECEFF1;  /* Gris claro */
+            --primary: #1E88E5;
+            --primary-dark: #1565C0;
+            --primary-light: #42A5F5;
+            --secondary: #00ACC1;
+            --accent: #536DFE;
+            --dark: #263238;
+            --light: #ECEFF1;
         }
         
         * {
@@ -47,17 +47,24 @@
         .logo-img {
             height: 50px;
             width: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-img:hover {
+            transform: rotate(-5deg);
         }
         
         .logo-text {
             font-weight: 700;
             font-size: 1.8rem;
-            color: var(--primary-dark);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         /* Hero Section */
         .hero {
-            padding: 100px 5%;
+            padding: 120px 5% 80px;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
@@ -79,7 +86,7 @@
         
         /* Features */
         .features {
-            padding: 60px 5%;
+            padding: 80px 5%;
             background: white;
         }
         
@@ -212,8 +219,14 @@
         }
         
         .footer-logo img {
-            height: 40px;
+            height: 50px;
             filter: brightness(0) invert(1);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-logo img:hover {
+            opacity: 1;
         }
         
         .social-icons {
@@ -244,6 +257,11 @@
             header {
                 flex-direction: column;
                 gap: 15px;
+                text-align: center;
+            }
+            
+            .hero {
+                padding: 100px 5% 60px;
             }
             
             .hero h1 {
@@ -261,12 +279,14 @@
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Favicon (reemplaza con tu propio favicon.ico) -->
+    <link rel="icon" href="img/favicon.ico">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="logo-container">
-            <img src="LogoPep.png" alt="Logo RopIA" class="logo-img">
+            <img src="img/LogoPep.png" alt="Logo RopIA" class="logo-img">
             <div class="logo-text">RopIA</div>
         </div>
         <div class="slogan">Moda inteligente, compras seguras</div>
@@ -341,7 +361,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-logo">
-            <img src="LogoPep.png" alt="Logo RopIA" class="logo-img">
+            <img src="img/LogoPep.png" alt="Logo RopIA">
         </div>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
@@ -351,5 +371,18 @@
         </div>
         <p class="copyright">© 2025 RopIA. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script para analytics (opcional) -->
+    <script>
+        // Puedes añadir aquí Google Analytics o otros scripts
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
